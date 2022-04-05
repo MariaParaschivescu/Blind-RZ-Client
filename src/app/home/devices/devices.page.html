@@ -1,0 +1,64 @@
+<ion-header>
+  <ion-toolbar color="primary" no-padding>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title fxLayout="row" fxLayoutAlign="center start">
+      <img style="margin: 0%;" alt="logo" height="40px" src="assets/icon/logo_transparent.png">
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+<ion-content>
+  <ion-row style="margin-top: 20px;">
+    <ion-col style="text-align: center; width: 100% !important;">
+      <ion-text>My Devices</ion-text>
+    </ion-col>
+  </ion-row>
+  <ion-grid>
+    <ion-row>
+      <ion-col size="12" size-sm="8" offset-sm="2" class="ion-text-center">
+          <ion-card *ngIf="relevantDevices.length === 0">
+            <ion-card-header>
+              <ion-card-title>Welcome to Blind-RZ!</ion-card-title>
+            </ion-card-header>
+            <ion-card-content>
+              <ion-text style="font-size: 20px; font-style:normal; margin-top: 0;">
+                Thank you for your purchase! To get started with the application, click one of the buttons below!
+              </ion-text>
+              <ion-grid>
+                <ion-row>
+                  <ion-col size="6">
+                    <ion-button
+                     size="small"
+                      color="secondary"
+                      [routerLink]="[
+                        '/',
+                        'home',
+                        'devices',
+                        'new-device']"
+                      >
+                    Pair Device
+                    </ion-button>
+                  </ion-col>
+                  <ion-col size="6">
+                    <ion-button
+                      size="small"
+                      fill="clear"
+                      color="primary"
+                      [routerLink]="[
+                        '/',
+                        'home',
+                        'programs',
+                        'new-program'
+                      ]">
+                      Add program
+                    </ion-button>
+                  </ion-col>
+                </ion-row>
+              </ion-grid>
+            </ion-card-content>
+          </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>
